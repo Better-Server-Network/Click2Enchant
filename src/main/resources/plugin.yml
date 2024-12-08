@@ -1,0 +1,34 @@
+name: Click2Enchant
+version: '${project.version}'
+main: org.betterservernetwork.click2enchant.Click2Enchant
+api-version: '1.18'
+commands:
+  toggleenchant:
+    description: Toggles clicking to enchant and disenchant item.
+    usage: /toggleenchant
+  rename:
+    description: Renames item in hand.
+    usage: /rename <name>
+    aliases: [rn]
+  toggleglobalenchant:
+    description: Toggles clicking to enchant and disenchant item for everyone.
+    usage: /toggleglobalenchant
+    permission: click2enchant.toggleglobalenchant
+  toggleglobalrename:
+    description: Toggles usage of the renaming command for everyone.
+    usage: /toggleglobalrename
+    permission: click2enchant.toggleglobalrename
+
+permissions:
+  click2enchant.*:
+    default: op
+    description: Full use of all commands.
+    children:
+      click2enchant.toggleglobalenchant: true
+      click2enchant.toggleglobalrename: true
+  click2enchant.toggleglobalenchant:
+    default: op
+    description: Allows usage of /toggleglobalenchant
+  click2enchant.toggleglobalrename:
+    default: op
+    description: Allows usage of /toggleglobalrename
